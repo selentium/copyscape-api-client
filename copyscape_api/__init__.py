@@ -1,1 +1,3 @@
-name = "copyscape-api-client"
+name = "copyscape_api"
+
+from .copyscape import Client, CopyscapeApiError

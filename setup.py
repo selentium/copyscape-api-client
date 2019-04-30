@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name='copyscape-api-client',  
+    name='copyscape_api',  
     version='0.1',
     scripts=[],
     author="Vladimir Kadalashvili",
@@ -13,7 +13,7 @@ setuptools.setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/selentium/copyscape-api-client",
-    packages=setuptools.find_packages(),
+    packages=['copyscape_api'],
     install_requires=[
         "requests",
         "xmltodict",
