@@ -6,7 +6,7 @@ def readme():
 
 setuptools.setup(
     name='copyscape_api',  
-    version='0.1',
+    version='0.2',
     scripts=[],
     author="Vladimir Kadalashvili",
     author_email="Kadalashvili.Vladimir@gmail.com",
