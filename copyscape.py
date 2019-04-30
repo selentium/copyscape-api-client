@@ -4,6 +4,9 @@ import codecs
 import requests
 import xmltodict
 
+class CopyscapeApiError(Exception):
+    pass
+
 class Client:
 
     api_url = "https://www.copyscape.com/api/"
@@ -95,7 +98,10 @@ class Client:
             r = requests.get(self.api_url, params=params)
         else:
             r = requests.post(self.api_url, data=params)
-        return xmltodict.parse(r.text)    
+        result = xmltodict.parse(r.text)    
+        if "response" in result and "error" in result['response']:
+            raise CopyscapeApiError(result['response']['error'])
+        return result    
 
 
                            
