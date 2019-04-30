@@ -1,7 +1,8 @@
 import setuptools
 
-with open("README.md", "r") as fh:
-    long_description = fh.read()
+def readme():
+    with open('README.md') as f:
+        return f.read()
 
 setuptools.setup(
     name='copyscape_api',  
@@ -10,9 +11,10 @@ setuptools.setup(
     author="Vladimir Kadalashvili",
     author_email="Kadalashvili.Vladimir@gmail.com",
     description="Python client for Copyscape API",
-    long_description=long_description,
+    long_description=readme(),
     long_description_content_type="text/markdown",
     url="https://github.com/selentium/copyscape-api-client",
+    license="MIT",
     packages=['copyscape_api'],
     install_requires=[
         "requests",
